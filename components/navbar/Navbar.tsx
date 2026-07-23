@@ -1,46 +1,111 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { motion } from "framer-motion";
+
+const links = [
+  {
+    label: "Home",
+    href: "#home",
+  },
+  {
+    label: "Stack",
+    href: "#stack",
+  },
+  {
+    label: "Experience",
+    href: "#experience",
+  },
+  {
+    label: "Projects",
+    href: "#projects",
+  },
+  {
+    label: "About",
+    href: "#about",
+  },
+  {
+    label: "Contact",
+    href: "#contact",
+  },
+];
+
 
 export default function Navbar() {
-  const [isScrolled, setIsScrolled] = useState(false);
-
-  useEffect(() => {
-    function handleScroll() {
-      setIsScrolled(window.scrollY > 50);
-    }
-
-    window.addEventListener("scroll", handleScroll);
-
-    return () => {
-      window.removeEventListener("scroll", handleScroll);
-    };
-  }, []);
-
   return (
-    <nav
-      className={`
-        fixed top-0 left-0 w-full z-50
-        transition-all duration-300
-        ${
-          isScrolled
-            ? "bg-black/70 backdrop-blur-md border-b border-white/10"
-            : "bg-transparent"
-        }
-      `}
+    <motion.nav
+      initial={{
+        y: -20,
+        opacity: 0,
+      }}
+      animate={{
+        y: 0,
+        opacity: 1,
+      }}
+      transition={{
+        duration: 0.5,
+      }}
+      className="
+        fixed
+        top-6
+        left-1/2
+        z-50
+        -translate-x-1/2
+        rounded-full
+        border
+        border-white/10
+        bg-black/40
+        px-6
+        py-3
+        backdrop-blur-xl
+      "
     >
-      <div className="mx-auto flex max-w-6xl items-center justify-between px-8 py-5">
-        <div className="text-xl font-bold">
+
+      <div
+        className="
+          flex
+          items-center
+          gap-6
+        "
+      >
+
+        <span
+          className="
+            font-bold
+            text-white
+          "
+        >
           GC
+        </span>
+
+
+        <div
+          className="
+            hidden
+            items-center
+            gap-5
+            md:flex
+          "
+        >
+
+          {links.map((link) => (
+            <a
+              key={link.href}
+              href={link.href}
+              className="
+                text-sm
+                text-zinc-400
+                transition
+                hover:text-white
+              "
+            >
+              {link.label}
+            </a>
+          ))}
+
         </div>
 
-        <div className="flex gap-8 text-sm text-zinc-400">
-          <a href="#">Home</a>
-          <a href="#">About</a>
-          <a href="#">Projects</a>
-          <a href="#">Contact</a>
-        </div>
       </div>
-    </nav>
+
+    </motion.nav>
   );
 }
