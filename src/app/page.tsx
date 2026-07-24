@@ -1,3 +1,4 @@
+import Highlights from "@/components/highlights/Highlights";
 import Footer from "@/components/footer/Footer";
 import Contact from "@/components/contact/Contact";
 import About from "@/components/about/About";
@@ -13,6 +14,7 @@ export default function Home() {
     <Background>
       <Navbar />
       <Hero />
+      <Highlights />
       <TechStack />
       <Experience />
       <Projects />
