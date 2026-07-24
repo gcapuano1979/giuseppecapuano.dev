@@ -1,55 +1,54 @@
-export interface Experience {
-  period: string;
-  role: string;
-  company: string;
-  description: string;
-  technologies: string[];
-}
+import { Experience } from "@/types/experience";
 
 export const experiences: Experience[] = [
   {
-    period: "2025 - Present",
-    role: "Senior Full Stack Engineer",
-    company: "Enterprise Healthcare Platforms",
+    period: "May 2025 - Present",
+    role: "Senior Full Stack Developer",
+    company: "Energee3",
     description:
-      "Development and maintenance of enterprise applications and integrations for complex business workflows.",
+      "Development and maintenance of enterprise software solutions for healthcare platforms.",
     technologies: [
       "Java",
       "Spring",
       "Hibernate",
-      "Angular",
       "Oracle",
       "REST API",
+      "Angular",
+      "TypeScript",
     ],
   },
   {
-    period: "2019 - 2025",
-    role: "Senior Software Engineer",
-    company: "Cybersecurity & Public Administration",
+    period: "December 2019 - May 2025",
+    role: "Senior Software Developer",
+    company: "Raxir",
     description:
-      "Design and development of secure software platforms and portals with focus on reliability, data protection and system integration.",
+      "Design and development of cybersecurity platforms and software systems for Public Administration and judicial environments.",
     technologies: [
       "Java",
       "Spring Boot",
       "Hibernate",
-      "Angular",
-      "TypeScript",
       "MySQL",
-      "REST",
+      "MariaDB",
+      "Angular",
+      "NestJS",
+      "C#",
+      "WPF",
     ],
   },
   {
-    period: "2002 - 2019",
-    role: "Software Engineer",
-    company: "Mission Critical Systems",
+    period: "April 2002 - November 2019",
+    role: "Software Analyst and Developer",
+    company: "TRS Sistemi",
     description:
-      "Development and integration of embedded and real-time software systems for defense, transportation and industrial domains.",
+      "Development of mission-critical software systems in defense, transportation and railway domains.",
     technologies: [
       "C++",
       "Linux",
-      "QNX",
+      "Unix",
+      "Qt",
+      "Java",
+      "UML",
       "Embedded Systems",
-      "Real-Time Software",
     ],
   },
 ];

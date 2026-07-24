@@ -1,29 +1,10 @@
 "use client";
 
+import { highlights } from "@/data/highlights";
 import Container from "@/components/ui/Container";
 import Section from "@/components/ui/Section";
 import SectionTitle from "@/components/ui/SectionTitle";
 import { motion } from "framer-motion";
-
-const highlights = [
-  {
-    heading: "20+",
-    title: "Years Building Software",
-  },
-  {
-    heading: "Enterprise",
-    title: "Java Platforms",
-  },
-  {
-    heading: "Defense • Railway",
-    title: "Healthcare • Cybersecurity",
-    description: "Mission-Critical Domains",
-  },
-  {
-    heading: "Full Stack",
-    title: "Angular Applications",
-  },
-];
 
 export default function Highlights() {
   return (
